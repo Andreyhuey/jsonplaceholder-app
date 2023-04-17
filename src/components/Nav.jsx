@@ -32,7 +32,7 @@ export default function Nav() {
     <div className="py-3 bg-blue-700 text-white dark:bg-black dark:text-white">
       <nav className="flex  justify-between">
         <h1 className="ms-6">
-          <Link to={`/`}>Logo</Link>
+          <Link to={`/`}>Home</Link>
         </h1>
         <ul className="flex justify-between gap-4 me-12 ">
           <li>

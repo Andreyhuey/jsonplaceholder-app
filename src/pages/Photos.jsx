@@ -21,7 +21,7 @@ export default function Photos() {
   }, []);
 
   return (
-    <div className="dark:bg-slate-900 h-screen">
+    <div className="dark:bg-slate-900 bg-zinc-200 h-screen">
       {Photos.map((Photos) => (
         <div key={Photos.id}>
           <img src={Photos.thumbnailUrl} />
