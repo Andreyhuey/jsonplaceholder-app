@@ -47,6 +47,9 @@ export default function Nav() {
           <li>
             <Link to="/comments">Comments</Link>
           </li>
+          <li>
+            <Link to="/todos">Todos</Link>
+          </li>
           <button
             className="gap-4 mt-1 flex justify-between"
             onClick={handleThemeSwitch}

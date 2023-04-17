@@ -20,5 +20,5 @@ export default function Albums() {
     FetchAlbums();
   }, []);
 
-  return <div className="h-screen dark:bg-black"></div>;
+  return <div className="h-screen dark:bg-slate-900"></div>;
 }

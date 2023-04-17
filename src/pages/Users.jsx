@@ -4,23 +4,26 @@ import { BeatLoader } from "react-spinners";
 
 export default function Users() {
   const [Users, setUsers] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    function FetchUsers() {
+    async function FetchUsers() {
       setLoading(true);
       fetch(`https://jsonplaceholder.typicode.com/users`)
         .then((response) => response.json())
         .then((json) => {
           setUsers(json);
+          setLoading(false);
           console.log(json);
+        })
+        .catch((err) => {
+          console.log(err.message);
         });
-      setLoading(false);
     }
     FetchUsers();
   }, []);
 
-  if (loading)
+  if (isLoading)
     return (
       <div className=" text-5xl flex items-center justify-center h-screen dark:bg-black dark:text-white">
         <BeatLoader
@@ -33,7 +36,8 @@ export default function Users() {
     );
 
   return (
-    <div className="h-auto  dark:text-grey-100 bg-white dark:bg-slate-900 px-4 md:px-8 lg:px-12">
+    <div className="vh-screen dark:text-grey-100 bg-zinc-300 dark:bg-slate-900 px-4 md:px-8 lg:px-12 py-3">
+      <div>{isLoading}</div>
       <h1 className="font-mono text-5xl text-center py-4 dark:text-zinc-400">
         Users
       </h1>

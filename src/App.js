@@ -1,6 +1,6 @@
 import React from "react";
 import { Nav, Footer } from "./components";
-import { Home, Users, UserID, Albums, Photos, Comments } from "./pages";
+import { Home, Users, UserID, Albums, Photos, Comments, Todos } from "./pages";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
           <Route exact path="/albums" element={<Albums />} />
           <Route exact path="/photos" element={<Photos />} />
           <Route exact path="/comments" element={<Comments />} />
+          <Route exact path="/todos" element={<Todos />} />
         </Routes>
       </div>
       <Footer />
