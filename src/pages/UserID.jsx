@@ -6,21 +6,41 @@ import { BsFillPersonFill, BsMailbox } from "react-icons/bs";
 export default function UserID() {
   const { userId } = useParams();
   const [user, setUser] = useState([]);
+  const [posts, setPosts] = useState([]);
+  const [userPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    function FetchUser() {
+    async function FetchUser() {
       setLoading(true);
       fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
         .then((response) => response.json())
         .then((json) => {
           setUser(json);
           console.log(json);
+          setLoading(false);
+        })
+        .catch((err) => {
+          console.log(err.message);
         });
-      setLoading(false);
+    }
+
+    async function FetchPosts() {
+      setLoading(true);
+      fetch(`https://jsonplaceholder.typicode.com/posts`)
+        .then((response) => response.json())
+        .then((json) => {
+          setPosts(json);
+          console.log(json);
+          setLoading(false);
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
     }
 
     FetchUser();
+    FetchPosts();
   }, [userId]);
 
   if (loading)
