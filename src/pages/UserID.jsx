@@ -18,7 +18,6 @@ export default function UserID() {
         .then((response) => response.json())
         .then((json) => {
           setUser(json);
-          console.log(json);
           setLoading(false);
         })
         .catch((err) => {
@@ -32,7 +31,6 @@ export default function UserID() {
         .then((response) => response.json())
         .then((json) => {
           setPosts(json);
-          console.log(json);
           setLoading(false);
         })
         .catch((err) => {
@@ -46,7 +44,6 @@ export default function UserID() {
         .then((response) => response.json())
         .then((json) => {
           setTodos(json);
-          console.log(json);
           setLoading(false);
         })
         .catch((err) => {
@@ -142,7 +139,7 @@ export default function UserID() {
                   <b>Todo Status</b>
                   <p>
                     {todos.completed === false ? (
-                      <RxCross2 className="" size={20} color="red" />
+                      <RxCross2 className="mt-1" size={20} color="red" />
                     ) : (
                       <IoMdDoneAll className="" size={20} color="green" />
                     )}
