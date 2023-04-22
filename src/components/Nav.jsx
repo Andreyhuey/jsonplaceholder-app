@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
+import { SiBrandfolder } from "react-icons/si";
+import { HiOutlineUsers } from "react-icons/hi";
 
 export default function Nav() {
   const [theme, setTheme] = useState(null);
@@ -31,11 +33,13 @@ export default function Nav() {
   return (
     <div className="py-3 bg-blue-700 text-white dark:bg-black dark:text-white">
       <nav className="flex  justify-between">
-        <h1 className="ms-6">
-          <Link to={`/`}>Home</Link>
+        <h1 className="ms-6 mt-1">
+          <Link to={`/`}>
+            <SiBrandfolder />
+          </Link>
         </h1>
-        <ul className="flex justify-between gap-4 me-12 ">
-          <li>
+        <ul className="flex justify-between gap-6 me-12 ">
+          {/* <li>
             <Link to="/albums">Albums</Link>
           </li>
           <li>
@@ -49,9 +53,11 @@ export default function Nav() {
           </li>
           <li>
             <Link to="/todos">Todos</Link>
-          </li>
+          </li> */}
           <li>
-            <Link to="/users">Users</Link>
+            <Link to="/users" className="flex">
+              <HiOutlineUsers className="mt-1 me-1" /> Users
+            </Link>
           </li>
           <button
             className="gap-4 mt-1 flex justify-between"

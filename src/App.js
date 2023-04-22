@@ -4,11 +4,11 @@ import {
   Home,
   Users,
   UserID,
-  Albums,
-  Photos,
-  Posts,
-  Comments,
-  Todos,
+  // Albums,
+  // Photos,
+  // Posts,
+  // Comments,
+  // Todos,
 } from "./pages";
 import { Route, Routes } from "react-router-dom";
 
@@ -21,11 +21,11 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/users" element={<Users />} />
           <Route exact path="/user/:userId" element={<UserID />} />
-          <Route exact path="/albums" element={<Albums />} />
+          {/* <Route exact path="/albums" element={<Albums />} />
           <Route exact path="/photos" element={<Photos />} />
           <Route exact path="/posts" element={<Posts />} />
           <Route exact path="/comments" element={<Comments />} />
-          <Route exact path="/todos" element={<Todos />} />
+          <Route exact path="/todos" element={<Todos />} /> */}
         </Routes>
       </div>
       <Footer />
